@@ -1,0 +1,21 @@
+@foreach (var device in Devices)
+{
+    <div @key="@device.Id" class="device">
+        <div class="name">
+            <span class="caption">デバイス名</span>
+            <span class="value">@device.Name</span>
+        </div>
+        <div class="mac-address">
+            <span class="caption">MACアドレス</span>
+            <span class="value">@device.MACAddress</span>
+        </div>
+    </div>
+}
+
+@code {
+    Device[] Devices = {
+        new Device {Name = "Odin", MACAddress = "00:15:5D:52:CA:B6"},
+        new Device {Name = "Thor", MACAddress = "00:0C:29:30:7D:5D"},
+        new Device {Name = "Fenrir", MACAddress = "00:50:56:01:43:86"}
+    };
+}
